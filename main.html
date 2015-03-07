@@ -4,14 +4,30 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Interview Station</title>
 
     <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+    <div ng-app="firstStation">
+      <div ng-controller="barcodeController">
+        <form class="" action="" method="post">
+
+        </form>
+        <div class="form-group">
+          <label for="barcode" class="label label-default">Barcode</label>
+          <input type="text" class="form-control" id="barcode" placeholder="xxxxx" ng-model="barcode" />
+          <p class="help-block">ใส่บาร์โค๊ดเลยจ้ะ</p>
+        </div>
+        <button name="submit" class="btn btn-primary">Submit</button>
+
+      </div>
+    </div>
 
 
     <script src="asset/jquery/jquery-1.11.1.min.js"></script>
     <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="asset/angular/angular.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
