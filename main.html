@@ -11,15 +11,16 @@
   <body>
     <div ng-app="firstStation">
       <div ng-controller="barcodeController">
-        <form class="" action="" method="post">
 
+        <form name="formBarcode" action="" method="post" ng-submit="formBarcode.$valid && submit()" novalidate>
+          <div class="form-group">
+            <label for="barcode" class="label label-default">Barcode</label>
+            <input type="text" class="form-control" name="barcode" placeholder="xxxxx" ng-model="barcode" ng-pattern="/^00[0-9]+99$/"/>
+            <span style="color:red" class="error" ng-show="formBarcode.barcode.$dirty && formBarcode.barcode.$invalid">บาร์โค้ดไม่ถูกต้อง</span><br>
+            <!-- <p class="help-block">ใส่บาร์โค๊ดเลยจ้ะ</p> -->
+          </div>
+          <button name="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div class="form-group">
-          <label for="barcode" class="label label-default">Barcode</label>
-          <input type="text" class="form-control" id="barcode" placeholder="xxxxx" ng-model="barcode" />
-          <p class="help-block">ใส่บาร์โค๊ดเลยจ้ะ</p>
-        </div>
-        <button name="submit" class="btn btn-primary">Submit</button>
 
       </div>
     </div>
@@ -29,5 +30,7 @@
     <script src="asset/bootstrap/js/bootstrap.min.js"></script>
     <script src="asset/angular/angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="service.js"></script>
+    <script src="controller.js"></script>
   </body>
 </html>
