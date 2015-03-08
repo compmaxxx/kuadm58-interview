@@ -9,19 +9,18 @@
     <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div ng-app="firstStation">
+    <div ng-app="station">
       <div ng-controller="barcodeController">
 
-        <form name="formBarcode" action="" method="post" ng-submit="formBarcode.$valid && submit()" novalidate>
           <div class="form-group">
             <label for="barcode" class="label label-default">Barcode</label>
-            <input type="text" class="form-control" name="barcode" placeholder="xxxxx" ng-model="barcode" ng-pattern="/^00[0-9]+99$/"/>
-            <span style="color:red" class="error" ng-show="formBarcode.barcode.$dirty && formBarcode.barcode.$invalid">บาร์โค้ดไม่ถูกต้อง</span><br>
+            <input type="text" class="form-control" name="barcode" placeholder="xxxxx" ng-model="barcode" ng-pattern="/^00[0-9]+99$/" ng-enter="submit()" />
+            <span style="color:red" class="error" ng-show="barcode.$dirty && barcode.$invalid">บาร์โค้ดไม่ถูกต้อง</span><br>
             <!-- <p class="help-block">ใส่บาร์โค๊ดเลยจ้ะ</p> -->
           </div>
-          <button name="submit" class="btn btn-primary">Submit</button>
-        </form>
+          <button type="button" name="submit" class="btn btn-primary">Submit</button>
 
+          <? include __DIR__."/include/station1_modal.php" ?>
       </div>
     </div>
 
