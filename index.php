@@ -9,8 +9,8 @@
 
   	<nav class="navbar navbar-fixed-top" style="background-color: #2ECC71;" >
       <div class="container">
-        <div class="navbar-header">
-          <span class="navbar-brand" style="color:#fff;">STATION 1 ลงทะเบียนตรวจเอกสาร</span>
+        <div class="navbar-header" ng-controller="headerController">
+          <span class="navbar-brand" style="color:#fff;">{{ header.title }}</span>
         </div>
       </div>
     </nav>
