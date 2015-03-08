@@ -9,9 +9,9 @@ app.controller('barcodeController', function($scope, infoService) {
     var national_id = decode_national_id($scope.barcode)
     infoService.getInfo(national_id).then(function(info) {
       $scope.info = info
-      console.log(info)
+        // console.log(info)
     })
-
+    $scope.barcode = ''
     $("#station1_modal").modal('show')
   }
 })

@@ -8,19 +8,19 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-4"><h4><b>เลขที่สมัคร</b></h4></div>
-            <div class="col-md-5"><h4>{{info.national_id}}</h4></div>
+            <div class="col-md-6"><h4>{{info.national_id}}</h4></div>
         </div>
         <div class="row">
             <div class="col-md-4"><h4><b>ชื่อ-นามสกุล</b></h4></div>
-            <div class="col-md-5"><h4>{{info.full_name}}</h4></div>
+            <div class="col-md-6"><h4>{{info.full_name}}</h4></div>
         </div>
         <div class="row">
             <div class="col-md-4"><h4><b>สาขาวิชา-คณะ</b></h4></div>
-            <div class="col-md-5"><h4>{{info.major.title}}</h4></div>
+            <div class="col-md-6"><h4>{{info.major.title}}</h4></div>
         </div>
          <div class="row">
             <div class="col-md-4"><h4><b>สถานะ</b></h4></div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <h4>
                     <input type="radio" name="is_document_pass" value="true" id="document_pass" checked>
                     <font color="green"><label for="document_pass">&nbsp;เอกสารครบ</label></font>

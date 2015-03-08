@@ -25,3 +25,8 @@ app.directive('ngEnter', function() {
     })
   }
 })
+
+
+$(document).bind('keydown', function(e) {
+  $('#barcode').focus();
+});

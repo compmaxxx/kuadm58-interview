@@ -21,6 +21,8 @@
           <button type="button" name="submit" class="btn btn-primary">Submit</button>
 
           <? include __DIR__."/include/station1_modal.php" ?>
+          <? include __DIR__."/include/station2_modal.php" ?>
+          <? include __DIR__."/include/station3_modal.php" ?>
       </div>
     </div>
 

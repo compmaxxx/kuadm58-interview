@@ -8,23 +8,19 @@
       <div class="modal-body">
         <div class="row">
             <div class="col-md-4"><h4><b>เลขที่สมัคร</b></h4></div>
-            <div class="col-md-5"><h4>1839900288646</h4></div>
+            <div class="col-md-6"><h4>{{info.national_id}}</h4></div>
         </div>
         <div class="row">
             <div class="col-md-4"><h4><b>ชื่อ-นามสกุล</b></h4></div>
-            <div class="col-md-5"><h4>ณัช เรือนเพ็ชร์</h4></div>
+            <div class="col-md-6"><h4>{{info.full_name}}</h4></div>
         </div>
         <div class="row">
-            <div class="col-md-4"><h4><b>คณะ</b></h4></div>
-            <div class="col-md-5"><h4>วิศวกรรมศาสตร์</h4></div>
+            <div class="col-md-4"><h4><b>สาขาวิชา-คณะ</b></h4></div>
+            <div class="col-md-6"><h4>{{info.major.title}}</h4></div>
         </div>
         <div class="row">
-            <div class="col-md-4"><h4><b>สาขาวิชา</b></h4></div>
-            <div class="col-md-5"><h4>วิศวกรรมคอมพิวเตอร์</h4></div>
-        </div>
-         <div class="row">
             <div class="col-md-4"><h4><b>ผลสัมภาษณ์</b></h4></div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <h4>
                     <input type="radio" name="is_interview_pass" value="true" id="interview_pass" checked>
                     <font color="green"><label for="interview_pass">&nbsp;ผ่าน</label></font>
@@ -39,7 +35,7 @@
                 </h4>
             </div>
         </div>
-          
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
