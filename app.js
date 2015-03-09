@@ -18,8 +18,8 @@ var Station = {
 
 var Config = {
 	'STATION': 3,
-	'PATH_GET_INFO': 'http://localhost/regis/api/applicant?id=',
-	'PATH_POST_INFO': 'http://localhost/regis/api/applicant?id='
+	'PATH_GET_INFO': 'http://localhost/adm58/api/applicant?id=',
+	'PATH_POST_INFO': 'http://localhost/adm58/api/applicant?id='
 }
 
 // var pathGetInfo = 'http://localhost/regis/api/applicant?id='
