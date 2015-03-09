@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" style="background-color:#2ECC71">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+     <!--    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
         <h4 class="modal-title"><h3><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color: #fff;"></span><font color="white"> รายละเอียด ผู้สมัคร (ตรวจเอกสาร)</font></h3></h4>
       </div>
       <div class="modal-body">

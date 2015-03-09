@@ -18,8 +18,8 @@ var Station = {
 
 var Config = {
 	'STATION': 3,
-	'PATH_GET_INFO': 'http://localhost/regis/api/applicant?id=',
-	'PATH_POST_INFO': 'http://localhost/regis/api/applicant?id='
+	'PATH_GET_INFO': 'http://localhost/adm58/api/applicant?id=',
+	'PATH_POST_INFO': 'http://localhost/adm58/api/applicant?id='
 }
 
 // var pathGetInfo = 'http://localhost/regis/api/applicant?id='
@@ -66,7 +66,47 @@ app.directive('ngEnter', function() {
 	}
 })
 
+function getModalShow()
+{
+	var allModalIDs = ["#station1_modal","#station2_modal","#station3_modal","#notification_modal"];
+	for(var i=0;i<allModalIDs.length;i++)
+	{
+		if($(allModalIDs[i]).data)
+		{
+			if($(allModalIDs[i]).data('bs.modal'))
+			{
+				if($(allModalIDs[i]).data('bs.modal').isShown)
+				{
+					return allModalIDs[i];
+				}
+			}
+		}
+	}
+	return null;
+}
+
 // press keydown and focus
 $(document).bind('keydown', function(e) {
-	$('#barcode').focus();
+	if(getModalShow()==null)
+	{
+		$('#barcode').focus();
+	}
+});
+
+// press keyup and focus
+$(document).keyup(function(e) {
+	var modal=getModalShow();
+	if(modal!=null){
+		if (e.keyCode == 27){
+			$(modal).modal('hide');
+		}else if(e.which == 13){
+			if(modal == "#notification_modal")
+			{
+				$(modal).modal('hide');
+			}else{
+				alert("Submit "+modal);
+				$(modal).modal('hide');
+			}
+		}
+	}
 });
