@@ -3,7 +3,8 @@
   <head>
   	<meta charset="utf-8">
     <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="asset/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- <link href="asset/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+    <title>Interview Station</title>
   </head>
   <body ng-app="station">
 
