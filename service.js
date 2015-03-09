@@ -15,14 +15,14 @@ app.service('infoService', function($http, $q) {
     return deferred.promise
   }
 
-  this.updateStation1 = function(national_id, document_complete) {
+  this.updateStation1 = function(national_id, documents_pass) {
     var deferred = $q.defer()
 
     $.post(Config.PATH_POST_INFO + helper.decodeNationalID(
       national_id), {
       'data': JSON.stringify({
         'state': STATE_DOCUMENT_VERIFIED,
-        'documents': helper.boolToInt(document_complete),
+        'documents': helper.boolToInt(documents_pass),
       }),
 
     }).
