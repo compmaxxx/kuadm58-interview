@@ -30,6 +30,7 @@
         <? include __DIR__."/include/station1_modal.php" ?>
         <? include __DIR__."/include/station2_modal.php" ?>
         <? include __DIR__."/include/station3_modal.php" ?>
+        <? include __DIR__."/include/notification_modal.php" ?>
 		</div>
 
 		<div  style="padding-top: 30px;">
@@ -91,5 +92,11 @@
   <script src="app.js"></script>
   <script src="service.js"></script>
   <script src="controller.js"></script>
+  <script>
+  $(document).ready(function(){
+  	$("#notificaltion_modal").modal('show');
+  });
+  	
+  </script>
   </body>
 </html>
