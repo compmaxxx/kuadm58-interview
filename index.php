@@ -16,8 +16,8 @@
       </div>
     </nav>
 
-  	<div class="container" style="padding-top: 70px;">
-      <div ng-controller="barcodeController">
+  	<div class="container" style="padding-top: 70px;" ng-controller="barcodeController">
+      <div>
     	 	<center>
     			<form class="form-inline">
     				<div class="form-group">
@@ -38,49 +38,22 @@
 	    <table class="table table-bordered">
 		 <thead>
 	        <tr class="active">
-	          <th rowspan=2><center>ที่</center></th>
-	          <th colspan=5><center>ชื่อ - สกุล</center></th>
-	          <th rowspan=2><center>เอกสารครบ</center></th>
-	          <th rowspan=2><center>รอเอกสาร</center></th>
-	        </tr>
-	        <tr class="active">
-	          <th><center>คำนำหน้า</center></th>
-	          <th><center>ชื่อ</center></th>
-	          <th><center>นามสกุล</center></th>
-	          <th><center>คณะ</center></th>
-	          <th><center>สาขาวิชา</center></th>
+	          <th><center>ที่</center></th>
+	          <th><center>ชื่อ - สกุล</center></th>
+	          <th><center>คณะ - สาขาวิชา</center></th>
+
+	          <th><center>{{colume_titles[0]}}</center></th>
+	          <th><center>{{colume_titles[1]}}</center></th>
 	        </tr>
 	      </thead>
 	      <tbody>
-	        <tr>
-	          <td>1</td>
-	          <td>นางสาว</td>
-	          <td>อภิญญา</td>
-	          <td>ประดิษฐผลเลิศ</td>
-	          <td>วิศวกรรมศาสตร์</td>
-	          <td>วิศวกรรมคอมพิวเตอร์</td>
-	          <td class="info"><center><span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true" style="color:#419641;"></span></center></td>
+	        <tr ng-repeat="history in historys">
+	          <td>{{$index+1}}</td>
+	          <td>{{history.full_name}}</td>
+	          <td>{{history.major}}</td>
+	          <td class="info" ng-show="history.is_pass=='true'"><center><span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true" style="color:#419641;"></span></center></td>
 	          <td></td>
-	        </tr>
-	        <tr>
-	          <td>2</td>
-	          <td>นาย</td>
-	          <td>ณัช</td>
-	          <td>เรือนเพ็ชร์</td>
-	          <td>วิศวกรรมศาสตร์</td>
-	          <td>วิศวกรรมคอมพิวเตอร์</td>
-	          <td></td>
-	          <td class="danger"><center><span class="glyphicon glyphicon-remove" aria-hidden="true"  style="color:#c12e2a;"></span></center></td>
-	        </tr>
-	        <tr>
-	          <td>3</td>
-	          <td>นาย</td>
-	          <td>คณิน</td>
-	          <td>วรางคณากูล</td>
-	          <td>วิศวกรรมศาสตร์</td>
-	          <td>วิศวกรรมคอมพิวเตอร์</td>
-	          <td></td>
-	          <td class="danger"><center><span class="glyphicon glyphicon-remove" aria-hidden="true"  style="color:#c12e2a;"></span></center></td>
+	          <td class="danger" ng-show="history.is_pass=='false'"><center><span class="glyphicon glyphicon-remove" aria-hidden="true"  style="color:#c12e2a;"></span></center></td>
 	        </tr>
 	      </tbody>
 		</table>

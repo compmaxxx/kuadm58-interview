@@ -1,4 +1,12 @@
 app.controller('barcodeController', function($scope, infoService) {
+
+  $scope.historys = [];
+  $scope.colume_titles = Station[Config.STATION].column;
+
+  function add_history(full_name,major,is_pass){
+    $scope.historys.unshift({full_name:full_name,major:major,is_pass:is_pass});
+  }
+
 	function reset_barcode() {
 			$scope.barcode = ''
 		}
@@ -45,6 +53,7 @@ app.controller('barcodeController', function($scope, infoService) {
 		var document_pass = $scope.document_pass
 			// console.log($scope.info.n)
 		infoService.updateStation1($scope.info.national_id, document_pass)
+    add_history($scope.info.full_name,$scope.info.major.title,document_pass);
 		$scope.hide_modal_station1()
 	}
 
@@ -75,9 +84,15 @@ app.controller('barcodeController', function($scope, infoService) {
 	$scope.confirm_station2 = function() {
 		var gpa_pass = $scope.gpa_pass
 		var study_plan_pass = $scope.study_plan_pass
-			// console.log($scope.info.n)
-		infoService.updateStation2($scope.info.national_id, gpa_pass,
-			study_plan_pass)
+		var all_pass = 'false';
+
+    if(study_plan_pass=='true' && gpa_pass=='true')
+    {
+      all_pass = 'true';
+    }
+    	// console.log($scope.info.n)
+		infoService.updateStation2($scope.info.national_id, gpa_pass,study_plan_pass)
+    add_history($scope.info.full_name,$scope.info.major.title,all_pass);
 		$scope.hide_modal_station2()
 	}
 
@@ -108,6 +123,7 @@ app.controller('barcodeController', function($scope, infoService) {
 		var interview_pass = $scope.interview_pass
 			// console.log($scope.info.n)
 		infoService.updateStation3($scope.info.national_id, interview_pass)
+    add_history($scope.info.full_name,$scope.info.major.title,interview_pass);
 		$scope.hide_modal_station3()
 	}
 
