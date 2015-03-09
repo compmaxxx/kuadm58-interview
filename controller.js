@@ -1,8 +1,13 @@
 app.controller('barcodeController', function($scope, infoService) {
 	function reset_barcode() {
-			$scope.barcode = ''
-		}
-		// STATION 1 //////////////////////////////////////
+		$scope.barcode = ''
+	}
+
+	$scope.show_modal_error = function() {
+		$('#notification_modal').modal('show')
+	}
+
+	// STATION 1 //////////////////////////////////////
 
 	$scope.show_modal_station1 = function() {
 		$scope.document_pass = Station[1].document_pass
@@ -16,27 +21,32 @@ app.controller('barcodeController', function($scope, infoService) {
 
 	$scope.submit_station1 = function() {
 		infoService.getInfo($scope.barcode).then(function(info) {
-			// Handle State Error ////////////////////////
+			var error = false
+				// Handle State Error ////////////////////////
 			if (info.result == 'not-found') {
-				// Not Found
-			} else {
-				if (info.result == 'ok') {
-					if (info.state == 3) {
-						// Not pass and Go home
-					}
+				// Not found applicant
+				error = true
+			} else if (info.result == 'ok') {
+				if (parseInt(info.state) == 3) {
+					// Not pass and Go home
+					error = true
+				} else if (parseInt(info.state) == 2 && (helper.boolToInt(info.is_study_plan_verified) ==
+						0 || helper.boolToInt(info.is_gpa_verified) == 0)) {
+					// Get out to home
+					error = true
+				} else if (parseInt(info.state) == 1 && helper.boolToInt(info
+						.documents) == 0) {
+					// Run to home and scan again
 
-					if (info.state != 0) {
-						if (info.state >= 0 && info.state <= 2) {
-							// Go to station state+1
-						}
-					}
 				}
 
 			}
-			//END Handle State Error ////////////////////////
 
-			$scope.info = info
-			$scope.show_modal_station1()
+			//END Handle State Error ////////////////////////
+			if (!error) {
+				$scope.info = info
+				$scope.show_modal_station1()
+			}
 		})
 
 	}
