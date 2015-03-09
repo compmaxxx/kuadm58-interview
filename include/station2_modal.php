@@ -35,13 +35,13 @@
             </div>
             <div class="col-md-2">
                 <h4>
-                    <input type="radio" name="is_gpa_pass" value="true" id="gpa_pass" checked>
+                    <input type="radio" name="is_gpa_pass" value="true" id="gpa_pass" ng-model="gpa_pass">
                     <font color="green"><label for="gpa_pass">&nbsp;ผ่าน</label></font>
                 </h4>
             </div>
             <div class="col-md-2">
                 <h4>
-                    <input type="radio" name="is_gpa_pass" value="false" id="gpa_notpass">
+                    <input type="radio" name="is_gpa_pass" value="false" id="gpa_notpass" ng-model="gpa_pass">
                     <font color="red"><label for="gpa_notpass">&nbsp;ไม่ผ่าน</label></font>
                 </h4>
             </div>
@@ -52,21 +52,21 @@
             </div>
             <div class="col-md-2">
                 <h4>
-                    <input type="radio" name="is_studyplan_pass" value="true" id="studyplan_pass" checked>
+                    <input type="radio" name="is_studyplan_pass" value="true" id="studyplan_pass" ng-model="study_plan_pass">
                     <font color="green"><label for="studyplan_pass">&nbsp;ผ่าน</label></font>
                 </h4>
             </div>
             <div class="col-md-2">
                 <h4>
-                    <input type="radio" name="is_studyplan_pass" value="false" id="studyplan_notpass"><font color="red">
+                    <input type="radio" name="is_studyplan_pass" value="false" id="studyplan_notpass" ng-model="study_plan_pass"><font color="red">
                     <label for="studyplan_notpass">&nbsp;ไม่ผ่าน</label></font>
                 </h4>
             </div>
         </div>
         </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="hide_modal_station2()">Close</button>
+        <button type="button" class="btn btn-success" ng-click="confirm_station2()">Submit</button>
       </div>
     </div>
   </div>

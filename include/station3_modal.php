@@ -22,7 +22,7 @@
             <div class="col-md-4"><h4><b>ผลสัมภาษณ์</b></h4></div>
             <div class="col-md-6">
                 <h4>
-                    <input type="radio" name="is_interview_pass" value="true" id="interview_pass" checked>
+                    <input type="radio" name="is_interview_pass" value="true" id="interview_pass" ng-model="interview_pass">
                     <font color="green"><label for="interview_pass">&nbsp;ผ่าน</label></font>
                 </h4>
             </div>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-md-5 col-md-offset-4">
                 <h4>
-                    <input type="radio" name="is_interview_pass" value="false" id="interview_notpass">
+                    <input type="radio" name="is_interview_pass" value="false" id="interview_notpass" ng-model="interview_pass">
                     <font color="red"><label for="interview_notpass">&nbsp;ไม่ผ่าน</label></font>
                 </h4>
             </div>
@@ -38,8 +38,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="hide_modal_station3()">Close</button>
+        <button type="button" class="btn btn-success" ng-click="confirm_station3()">Submit</button>
       </div>
     </div>
   </div>
