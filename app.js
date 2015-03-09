@@ -4,15 +4,18 @@ var Station = {
 	1: {
 		'title': 'STATION 1 ลงทะเบียนตรวจเอกสาร',
 		'document_pass': 'true',
+		'column':['เอกสารครบ','รอเอกสาร']
 	},
 	2: {
 		'title': 'STATION 2 ตรวจสอบคุณสมบัติ',
 		'gpa_pass': 'true',
 		'study_plan_pass': 'true',
+		'column':['ผ่าน','ไม่ผ่าน']
 	},
 	3: {
 		'title': 'STATION 3 สอบสัมภาษณ์',
-		'interview_pass': 'true'
+		'interview_pass': 'true',
+		'column':['ผ่าน','ไม่ผ่าน']
 	},
 }
 
