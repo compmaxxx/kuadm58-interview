@@ -18,7 +18,7 @@ var Station = {
 }
 
 var Config = {
-	'STATION': 1,
+	'STATION': 3,
 	'PATH_GET_INFO': 'http://localhost/regis/api/applicant?id=',
 	'PATH_POST_INFO': 'http://localhost/regis/api/applicant?id=',
 	'state_handle': {
@@ -28,6 +28,6 @@ var Config = {
 		'GO_TO_STATION1': 'มาผิดสถานีแล้วจ้ะ ไปสถานีที่ 1 ก่อน',
 		'PASS_ALL': 'ผ่านสัมภาษณ์แล้ว กลับบ้านได้เลยค่า',
 		'INCORRECT_STATION': 'มาผิดสถานีแล้วจ้ะ ไปสถานีที่ ',
-
+		'HAVE_COME': 'ผู้สมัครเคยมาแล้วครับ'
 	}
 }

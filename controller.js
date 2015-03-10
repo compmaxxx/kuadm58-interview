@@ -203,6 +203,7 @@ app.controller('barcodeController', function($scope, infoService) {
 
 
   $scope.submit = function() {
+    $scope.have_come = Config.state_handle.HAVE_COME
     if (Config.STATION == 1) {
       $scope.submit_station1()
     } else if (Config.STATION == 2) {
