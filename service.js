@@ -13,8 +13,11 @@ app.service('infoService', function($http, $q) {
         deferred.resolve(data)
       })
       .error(function(data, status, headers, config) {
-        data.status_code = parseInt(status)
-        deferred.resolve(data)
+        dummy = {
+          'status_code': parseInt(status)
+        }
+
+        deferred.resolve(dummy)
 
       })
 
