@@ -1,4 +1,4 @@
-app.controller('barcodeController', function($scope, infoService) {
+app.controller('barcodeController', function($scope, infoService, $sce) {
 
   $scope.historys = [];
   $scope.colume_titles = Station[Config.STATION].column;
@@ -20,8 +20,9 @@ app.controller('barcodeController', function($scope, infoService) {
     $scope.info = {
       'national_id': $scope.barcode
     }
-    $scope.notification_msg =
-      'คุณไม่มีสิทธิ์เข้าใช้งาน: กรุณา Login ที่ ' + Config.PATH_LOGIN
+    $scope.notification_msg = $sce.trustAsHtml(
+      'คุณไม่มีสิทธิ์เข้าใช้งาน: กรุณา Login ที่ ' + Config.PATH_LOGIN)
+
     $scope.show_modal_error()
   }
 

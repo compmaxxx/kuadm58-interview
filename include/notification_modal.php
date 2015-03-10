@@ -15,7 +15,7 @@
             <div class="col-md-6"><h4>{{info.full_name}}</h4></div>
         </div>
         <div class="row">
-            <div class="col-md-8"><h4>{{notification_msg}}</h4></div>
+            <div class="col-md-8"><h4 ng-bind-html="notification_msg"></h4></div>
         </div>
       </div>
       <div class="modal-footer">
