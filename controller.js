@@ -20,8 +20,8 @@ app.controller('barcodeController', function($scope, infoService) {
     $scope.info = {
       'national_id': $scope.barcode
     }
-    $scope.notification_msg = 'คุณไม่มีสิทธิ์เข้าใช้งาน: กรุณา <a href="' +
-      Config.PATH_LOGIN + '">Login</a>'
+    $scope.notification_msg =
+      'คุณไม่มีสิทธิ์เข้าใช้งาน: กรุณา Login ที่ ' + Config.PATH_LOGIN
     $scope.show_modal_error()
   }
 
