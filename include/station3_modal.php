@@ -6,6 +6,10 @@
         <h4 class="modal-title"><h3><span class="glyphicon glyphicon-ok" aria-hidden="true" style="color: #fff;"></span><font color="white"> รายละเอียด ผู้สมัคร (สอบสัมภาษณ์)</font></h3></h4>
       </div>
       <div class="modal-body">
+        <div class="row" ng-show="overlap">
+            <div class="col-md-4"><h4><b>หมายเหตุ</b></h4></div>
+            <font color="red"><div class="col-md-6"><h4>ผู้สมัครเคยมาแล้วครับ</h4></div></font>
+        </div>
         <div class="row">
             <div class="col-md-4"><h4><b>เลขที่สมัคร</b></h4></div>
             <div class="col-md-6"><h4>{{info.national_id}}</h4></div>
