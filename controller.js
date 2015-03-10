@@ -189,11 +189,11 @@ app.controller('barcodeController', function($scope, infoService) {
   }
 
   $scope.submit_station3 = function() {
-    if (parseInt(info.status_code) == 403) {
-      $scope.permission_denied()
-      return;
-    }
     infoService.getInfo($scope.barcode).then(function(info) {
+      if (parseInt(info.status_code) == 403) {
+        $scope.permission_denied()
+        return;
+      }
       if (info.result == 'ok' && parseInt(info.state) == 2 && helper.boolToInt(
           info.is_gpa_verified) == 1 && helper.boolToInt(info.is_study_plan_verified) ==
         1) {

@@ -1,4 +1,4 @@
-app.service('infoService', function($http, $q, modal) {
+app.service('infoService', function($http, $q) {
   var STATE_INITIAL = 0;
   var STATE_DOCUMENT_VERIFIED = 1;
   var STATE_EDU_DOC_VERIFIED = 2;
