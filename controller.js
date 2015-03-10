@@ -21,7 +21,8 @@ app.controller('barcodeController', function($scope, infoService, $sce) {
       'national_id': $scope.barcode
     }
     $scope.notification_msg = $sce.trustAsHtml(
-      'คุณไม่มีสิทธิ์เข้าใช้งาน: กรุณา Login ที่ ' + Config.PATH_LOGIN)
+      'คุณไม่มีสิทธิ์เข้าใช้งาน: กรุณา Login ที่ <a href="' + Config.PATH_LOGIN +
+      '">Login</a>')
 
     $scope.show_modal_error()
   }
