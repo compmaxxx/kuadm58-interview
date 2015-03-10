@@ -63,6 +63,7 @@
   <script src="asset/jquery/jquery-1.11.1.min.js"></script>
   <script src="asset/bootstrap/js/bootstrap.min.js"></script>
   <script src="asset/angular/angular.min.js"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
   <script src="service.js"></script>
   <script src="controller.js"></script>
