@@ -35,35 +35,35 @@ app.controller('barcodeController', function($scope, infoService, $sce) {
       $scope.info = {
         'national_id': $scope.barcode
       }
-      $scope.notification_msg = Config.state_handle.NOT_FOUND
+      $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.NOT_FOUND)
     } else if (info.result == 'ok') {
       $scope.info = info
       if (parseInt(info.state) == 3 && helper.boolToInt(info.is_passed) ==
         0) {
         // Not pass and Go home
         $scope.showname = true
-        $scope.notification_msg = Config.state_handle.NOT_PASS_INTERVIEW
+        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.NOT_PASS_INTERVIEW)
       } else if (parseInt(info.state) == 2 && (helper.boolToInt(info.is_study_plan_verified) ==
           0 || helper.boolToInt(info.is_gpa_verified) == 0)) {
         // Get out to home
 
         $scope.showname = true
-        $scope.notification_msg = Config.state_handle.NOT_PASS_PROPERTIES
+        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.NOT_PASS_PROPERTIES)
 
       } else if (parseInt(info.state) == 1 && (helper.boolToInt(info.documents) ==
           0)) {
         // Go to station 1
         $scope.showname = true
-        $scope.notification_msg = Config.state_handle.GO_TO_STATION1
+        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.GO_TO_STATION1)
       } else if (parseInt(info.state) == 3 && helper.boolToInt(info.is_passed) ==
         1) {
         // pass all
         $scope.showname = true
-        $scope.notification_msg = Config.state_handle.PASS_ALL
+        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.PASS_ALL)
       } else {
         // Incorrect station
         $scope.showname = true
-        $scope.notification_msg = Config.state_handle.INCORRECT_STATION +
+        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.INCORRECT_STATION + )
           (
             parseInt(info.state) + 1)
 
