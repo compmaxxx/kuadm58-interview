@@ -9,9 +9,14 @@
   <body ng-app="station">
 
   	<nav class="navbar navbar-fixed-top" style="background-color: #2ECC71;" >
-      <div class="container">
-        <div class="navbar-header" ng-controller="headerController">
+      <div class="container" ng-controller="headerController">
+        <div class="navbar-header">
           <span class="navbar-brand" style="color:#fff;">{{ header.title }}</span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="{{header.path_logout}}" style="color:#fff;">Logout</a></li>
+          </ul>
         </div>
       </div>
     </nav>

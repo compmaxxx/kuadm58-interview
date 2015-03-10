@@ -243,6 +243,7 @@ app.controller('barcodeController', function($scope, infoService, $sce) {
 
 app.controller('headerController', function($scope) {
   $scope.header = {
-    'title': Station[Config.STATION].title
+    'title': Station[Config.STATION].title,
+    'path_logout': Config.PATH_LOGOUT
   }
 })
