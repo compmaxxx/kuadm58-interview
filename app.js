@@ -74,7 +74,7 @@ $(document).keydown(function(e) {
   if (modal != null) {
     if (e.keyCode == 27) {
       $(modal).modal('hide');
-
+      $('#barcode').val('')
     } else if (e.which == 13) {
       if (modal == "#notification_modal") {
         // $(modal).modal('hide');
