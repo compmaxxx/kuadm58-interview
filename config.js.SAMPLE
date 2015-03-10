@@ -19,8 +19,8 @@ var Station = {
 
 var Config = {
 	'STATION': 3,
-	'PATH_GET_INFO': 'http://localhost/regis/api/applicant?id=',
-	'PATH_POST_INFO': 'http://localhost/regis/api/applicant?id=',
+	'PATH_GET_INFO': 'http://localhost/adm58/api/applicant?id=',
+	'PATH_POST_INFO': 'http://localhost/adm58/api/applicant?id=',
 	'state_handle': {
 		'NOT_FOUND': 'ไม่มีข้อมูลผู้สมัคร',
 		'NOT_PASS_INTERVIEW': 'ผู้สมัครไม่ผ่านการสอบสัมภาษณ์(3) กลับบ้านไปซะ',
