@@ -1,4 +1,4 @@
-app.service('infoService', function($http, $q) {
+app.service('infoService', function($http, $q, modal) {
   var STATE_INITIAL = 0;
   var STATE_DOCUMENT_VERIFIED = 1;
   var STATE_EDU_DOC_VERIFIED = 2;
@@ -8,8 +8,14 @@ app.service('infoService', function($http, $q) {
     var deferred = $q.defer()
 
     $http.get(Config.PATH_GET_INFO + helper.decodeNationalID(national_id))
-      .success(function(data) {
+      .success(function(data, status, headers, config) {
+        data.status_code = parseInt(status)
         deferred.resolve(data)
+      })
+      .error(function(data, status, headers, config) {
+        data.status_code = parseInt(status)
+        deferred.resolve(data)
+
       })
 
     return deferred.promise
