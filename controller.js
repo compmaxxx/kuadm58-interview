@@ -63,9 +63,8 @@ app.controller('barcodeController', function($scope, infoService, $sce) {
       } else {
         // Incorrect station
         $scope.showname = true
-        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.INCORRECT_STATION + )
-          (
-            parseInt(info.state) + 1)
+        $scope.notification_msg = $sce.trustAsHtml(Config.state_handle.INCORRECT_STATION +
+          (parseInt(info.state) + 1))
 
       }
 
